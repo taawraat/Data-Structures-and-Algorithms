@@ -1,25 +1,28 @@
 #include <bits/stdc++.h>
-int primes[] = {};
+#define ll long long
+#define max 1000000
 using namespace std;
 
-// Solver function
-void primeNum(long long int max)
+// Prime function sieve
+void primeGen()
 {
   primes[1] = 1;
-  for(long long int i = 2; i <= sqrt(max); i++)
+  for(ll i = 2; i * i <= max; i++)
     if(!primes[i])
-      for(long long int j = 2; i * j <= max; j++)
+      for(ll j = i; i * j <= max; j++)
         primes[i*j] = 1;
 }
+
 
 
 
 // Driver function
 int main() 
 {
+  primeGum();  
   long long int max; cin >> max;
 
-  primeNum(max);  
+
   
   // printing prime numbers 1 to max
   for(long long int i = 2; i <= max; i++)
