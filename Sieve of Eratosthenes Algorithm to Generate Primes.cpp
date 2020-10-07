@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define ll long long
 #define max 1000000
+bool primes[max] = {};
 using namespace std;
 
 // Prime function sieve
