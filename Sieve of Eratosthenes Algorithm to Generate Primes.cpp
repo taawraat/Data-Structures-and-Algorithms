@@ -26,7 +26,7 @@ int main(){
   int N; scanf("%d", &N);
 
   // printing prime numbers 1 to N
-  for(int i = 1; i <= n; i++)
+  for(int i = 1; i <= N; i++)
     if(isPrime(i))
       pf("%d\n", i);
 }
