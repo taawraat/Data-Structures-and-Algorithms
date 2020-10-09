@@ -1,32 +1,32 @@
-#include <bits/stdc++.h>
-#define ll long long
-#define max 1000000
-bool primes[max] = {};
-using namespace std;
+#include <stdio.h>
+#define pf printf
+#define MAX 20000001
+char prime[MAX];
 
-// Prime function sieve
-void primeGen()
-{
-  primes[1] = 1;
-  for(ll i = 2; i * i <= max; i++)
-    if(!primes[i])
-      for(ll j = i; i * j <= max; j++)
-        primes[i*j] = 1;
+// check if n is prime
+bool isPrime(int n){
+  if(n == 2) return true;
+  else if(!(n & 1)) return false;
+  else if(!prime[n]) return true;
+  else return false;
 }
 
+// prime function using sieve
+void primeGen(){
+  prime[1] = 1;
+  for(int i = 3; i*i <= MAX ; i += 2)
+    if(isPrime(i))
+      for(int j = i+i; j <= MAX; j += i)
+        prime[j] = 1;
+}
 
+int main(){
+  primeGen();
 
+  int N; scanf("%d", &N);
 
-// Driver function
-int main() 
-{
-  primeGum();  
-  long long int max; cin >> max;
-
-
-  
-  // printing prime numbers 1 to max
-  for(long long int i = 2; i <= max; i++)
-    if(!(primes[i]))
-      cout << i << endl;
+  // printing prime numbers 1 to N
+  for(int i = 1; i <= n; i++)
+    if(isPrime(i))
+      pf("%d\n", i);
 }
