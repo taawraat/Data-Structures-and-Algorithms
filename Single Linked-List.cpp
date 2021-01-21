@@ -3,7 +3,7 @@ using namespace std;
 
 // Data Structure
 // raw implementation of single linkedList
-// operations implemented: addElement,
+// operations implemented: addElement, show/access elements
 class linkedList{
     // data can be any type of data
     int data;
